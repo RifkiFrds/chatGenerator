@@ -1,0 +1,110 @@
+:root {
+  --primary-bg: #f4f7f9;
+  --secondary-bg: #ffffff;
+  --text-color: #333;
+  --primary-color: #4f46e5;
+  --border-color: #e0e0e0;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  max-width: 700px;
+  background: var(--secondary-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+header h1 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+button {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:disabled {
+  background-color: #a5a2f5;
+  cursor: not-allowed;
+}
+button:hover:not(:disabled) {
+  background-color: #4338ca;
+}
+.result-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.result-box.error {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+.result-box h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+.result-box textarea {
+  background-color: var(--secondary-bg);
+  height: 200px;
+  resize: vertical;
+}
+.copy-btn {
+  margin-top: 1rem;
+  background-color: #10b981;
+}
+.copy-btn:hover {
+  background-color: #059669;
+}
+.copy-success {
+  text-align: center;
+  color: #059669;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}

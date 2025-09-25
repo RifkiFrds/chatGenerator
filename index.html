@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Generator | Gemini & Netlify</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chat Generator untuk Mahasiswa 🎓</h1>
+            <p>Buat pesan profesional untuk dosen dengan bantuan AI.</p>
+        </header>
+
+        <main>
+            <form id="generator-form">
+                <div class="form-group">
+                    <label for="template-select">Pilih Kebutuhan Anda:</label>
+                    <select id="template-select">
+                        <option value="none" selected disabled>-- Pilih Jenis Pesan --</option>
+                        <option value="izin_sakit">Minta Izin Sakit / Keperluan</option>
+                        <option value="ingatkan_jadwal">Mengingatkan Jadwal Kuliah</option>
+                    </select>
+                </div>
+
+                <div id="dynamic-inputs"></div>
+
+                <button type="submit" id="submit-btn" disabled>✨ Generate Pesan</button>
+            </form>
+
+            <div id="result-container" class="result-box" style="display: none;">
+                <h2>Hasil Pesan:</h2>
+                <textarea id="result-textarea" readonly rows="10"></textarea>
+                <button id="copy-btn" class="copy-btn">Salin Teks</button>
+                <p id="copy-success" class="copy-success"></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
