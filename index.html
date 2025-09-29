@@ -1,50 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Generator | Neo-Brutalism</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Generator Mahasiswa</title>
+    <link rel="stylesheet" href="src/style/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>Chat Generator Mahasiswa 🎓</h1>
-            <p>Buat pesan profesional untuk dosen dengan bantuan AI.</p>
-        </header>
+      <header>
+        <h1>Chat Generator Mahasiswa</h1>
+        <p>Buat pesan profesional untuk dosen dengan bantuan AI.</p>
+      </header>
 
-        <main>
-            <form id="generator-form">
-                <div class="form-group">
-                    <label for="template-select">Pilih Kebutuhan Anda:</label>
-                    <select id="template-select">
-                        <option value="none" selected disabled>-- Pilih Jenis Pesan --</option>
-                        <option value="izin_sakit">Minta Izin Sakit / Keperluan</option>
-                        <option value="ingatkan_jadwal">Konfirmasi Jadwal Kuliah</option>
-                    </select>
-                </div>
+      <main>
+        <form id="generator-form">
+          <div class="form-group">
+            <label for="style">Gaya Penulisan</label>
+            <select id="style" name="style" required>
+              <option value="" selected disabled>
+                -- Pilih Gaya Penulisan --
+              </option>
+              <option value="formal">Formal</option>
+              <option value="semi-formal">Semi-formal</option>
+              <option value="santai">Santai tapi sopan</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="template-select">Bingung mau chat dosen gimana?</label>
+            <select id="template-select">
+              <option value="none" selected disabled>
+                -- Pilih Skenario Komunikasi --
+              </option>
 
-                <div id="dynamic-inputs"></div>
+              <optgroup label="Perkuliahan & Kelas">
+                <option value="1a_izin_absen">
+                  Memberitahu Izin Tidak Masuk
+                </option>
+                <option value="1b_konfirmasi_jadwal_pj">
+                  Mengingatkan Jadwal Dosen
+                </option>
+                <option value="1c_klarifikasi_tugas">
+                  Klarifikasi Materi atau Tugas
+                </option>
+              </optgroup>
 
-                <button type="submit" id="submit-btn" disabled>✨ Generate Pesan</button>
-            </form>
+              <optgroup label="Administrasi Akademik">
+                <option value="2a_konsultasi_pa">
+                  Konsultasi dengan Dosen PA
+                </option>
+                <option value="2b_minta_rekomendasi">
+                  Meminta Surat Rekomendasi
+                </option>
+                <option value="2c_minta_invite_grup">
+                  Meminta Dimasukkan ke Grup WA
+                </option>
+              </optgroup>
 
-            <div id="result-container" class="result-box" style="display: none;">
-                <h2>Hasil Pesan:</h2>
-                <textarea id="result-textarea" readonly rows="10"></textarea>
-                <button id="copy-btn" class="copy-btn">Salin Teks</button>
-                <p id="copy-success" class="copy-success"></p>
-            </div>
-        </main>
+              <optgroup label="Bimbingan Skripsi/TA">
+                <option value="3a_kontak_awal">
+                  Memulai Bimbingan Pertama Kali
+                </option>
+                <option value="3b_jadwal_bimbingan">
+                  Menjadwalkan Bimbingan Rutin
+                </option>
+                <option value="3c_minta_ttd">
+                  Meminta Tanda Tangan Pengesahan
+                </option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div id="dynamic-inputs"></div>
+
+          <button type="submit" id="submit-btn" disabled>
+            ✨ Generate Pesan
+          </button>
+        </form>
+
+        <div id="result-container" class="result-box" style="display: none">
+          <h2>Hasil Pesan:</h2>
+          <textarea id="result-textarea" readonly rows="10"></textarea>
+          <button id="copy-btn" class="copy-btn">Salin Teks</button>
+          <p id="copy-success" class="copy-success"></p>
+        </div>
+      </main>
     </div>
 
     <footer class="site-footer">
-        <p>Made with ♥ by frdski</p>
+      <p>
+        Made with ♥ by
+        <a href="https://github.com/rifkifrds" target="_blank">rifkifrds</a>
+      </p>
     </footer>
 
-    <script src="script.js" defer></script>
-</body>
+    <script type="module" src="src/script.js" defer></script>
+  </body>
 </html>
